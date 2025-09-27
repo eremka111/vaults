@@ -22,6 +22,8 @@ abstract contract Strategy is ERC20 {
     /// @return The user's strategy balance in underlying tokens.
     /// @dev May mutate the state of the strategy by accruing interest.
     function balanceOfUnderlying(address user) external virtual returns (uint256);
+
+    function supplyRatePerBlock() external virtual returns (uint256);
 }
 
 /// @notice Minimal interface for Vault strategies that accept ERC20s.
